@@ -56,3 +56,44 @@ def introduce(name, age=0):
     else:
        msg += "I am %d years old." % age
     return msg 
+
+# 11: Equilateral Triangle
+def isEquilateral(x, y, z):
+  if x < 0 or y < 0 or z < 0:
+    return False
+  return x == y and y == z  
+
+# 12: Quadratic Equation
+def quadratic(a, b, c):
+  return("The discriminant is %d."%(b**2 - 4 * a *c))
+
+# 13: Add First And Last
+def addFirstAndLast(x): 
+  if len(x) == 0:
+    return 0
+  elif len(x) == 1:
+    return x[0]
+    
+  return x[0] + x[-1]  
+
+# 14: The 'Lambda' Operator
+# Complete the 'lambda' expression so that it returns True if the argument is an even number, and False otherwise.
+even = lambda x: x % 2 == 0
+
+# 15: Docstring
+# Add in the documentation string which gives the same output shown in the example.
+def getScore(data):
+    'A function that computes and returns the final score.'
+    return data 
+
+# 16: Passing Function
+def addOne(x):
+        return x + 1
+        
+def useFunction(func, num): 
+	return func(num) * func(num)
+
+# 17: Calculate Distance
+import math
+def calDistance(x1,y1,x2,y2):
+	return math.sqrt((x2 -x1)*(x2 -x1)+ (y2 -y1)*(y2 -y1))
