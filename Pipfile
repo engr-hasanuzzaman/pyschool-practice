@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 requests = "*"
 django = "==2.1"
+flask = "*"
 
 [dev-packages]
 
