@@ -1,18 +1,11 @@
-<html>
-    <head>
-      {% if title %}
-        <title>{{ title }} - Microblog</title>
-      {% else %}
-      <title>missing title</title>
-      {% endif %}
-    </head>
-    <body>
-        <h1>Hello, {{ user.username }}!</h1>
-        <p>below are your posts:</p>
-        {% for post in posts %}
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.des }}</p>
-        {% endfor %}
-        <p>this is footer section</p>
-    </body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Hello, {{ user.username }}!</h1>
+<p>below are your posts:</p>
+{% for post in posts %}
+<h3>{{ post.title }}</h3>
+<p>{{ post.des }}</p>
+{% endfor %}
+<p>this is footer section</p>
+{% endblock %}
