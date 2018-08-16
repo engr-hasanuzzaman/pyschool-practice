@@ -7,6 +7,7 @@ name = "pypi"
 requests = "*"
 django = "==2.1"
 flask = "*"
+flask-wtf = "*"
 
 [dev-packages]
 
