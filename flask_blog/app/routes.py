@@ -14,7 +14,7 @@ def index():
     { 'title': '2nd post', 'des': '2nd post description' },
     { 'title': '3rd post', 'des': '3rd post description' },
   ]
-  return render_template('index.html', user = user, title = 'my blog', posts = posts)
+  return render_template('index.html', title = 'my blog', posts = posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
