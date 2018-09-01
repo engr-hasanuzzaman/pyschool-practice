@@ -8,11 +8,12 @@
     </head>
     <body>
         <div>
-          Microblog: <a href={{ url_for('index') }}>Home</a>
+          <a href={{ url_for('index') }}>Home</a>
           {% if current_user.is_authenticated %}
-          Microblog: <a href={{ url_for('logout') }}>logout</a>
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href={{ url_for('logout') }}>logout</a>
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href={{ url_for('user', username=current_user.username)}}>Profile</a>
           {% else %}
-          Microblog: <a href={{ url_for('login') }}>login</a>
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href={{ url_for('login') }}>login</a>
           {% endif %}
         </div>
         <br/>
