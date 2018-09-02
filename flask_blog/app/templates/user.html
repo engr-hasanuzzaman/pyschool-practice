@@ -9,8 +9,11 @@
 </table>
     <hr>
     {% for post in posts %}
-    <p>
-    {{ post.author.username }} says: <b>{{ post.body }}</b>
-    </p>
+    <table>
+        <tr valign=top>
+            <td><img src="{{current_user.avatar(40)}}" alt="img"></td>
+            <td>{{ post.author.username }} says: <br/><b>{{ post.body }}</b></td>
+        </tr>
+    </table>
     {% endfor %}
 {% endblock %}
