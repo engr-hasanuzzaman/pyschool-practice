@@ -4,7 +4,6 @@
 <h1>Hello, {{ current_user.username }}!</h1>
 <p>below are your posts:</p>
 {% for post in posts %}
-  {% include '_post.html' %}
 {% endfor %}
 <p>this is footer section</p>
 {% endblock %}
