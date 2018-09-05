@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, url_for
 from app import app, db
-from app.forms import LoginForm, RegistrationForm
+from app.forms import LoginForm, RegistrationForm, EditProifileForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from datetime import datetime
@@ -65,3 +65,17 @@ def before_request():
   if current_user.is_authenticated:
     current_user.last_seen = datetime.utcnow()
     db.session.commit()
+
+@app.route('/edit_profile', methods=['GET', 'POST'])
+def edit_profile():
+  form = EditProifileForm()
+  if form.validate_on_submit:
+    current_user.username = form.username.data
+    current_user.about_me = form.about_me.data
+    db.session.commit()
+    flash('Your change has been saved')
+    return redirect(url_for('edit_profile'))
+  elif request.method == 'GET':
+    form.username.data = current_user.username
+    form.about_me.data = current_user.about_me
+  return render_template('edit_profile', title='edit profile', form=form)
