@@ -28,6 +28,7 @@ def login():
           flash('Invalid username or password')
           return redirect(url_for('login'))
       login_user(user, remember=form.remember_me.data)
+      flash('successfully login')
       return redirect(url_for('index'))
     return render_template('login.html', title='Sign In', form=form)
 
@@ -67,6 +68,7 @@ def before_request():
     db.session.commit()
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
+@login_required
 def edit_profile():
   form = EditProifileForm()
   if form.validate_on_submit:
@@ -78,4 +80,4 @@ def edit_profile():
   elif request.method == 'GET':
     form.username.data = current_user.username
     form.about_me.data = current_user.about_me
-  return render_template('edit_profile', title='edit profile', form=form)
+  return render_template('edit_profile.html', title='edit profile', form=form)
