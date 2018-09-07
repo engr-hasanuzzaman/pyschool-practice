@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, request
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProifileForm
 from flask_login import current_user, login_user, logout_user, login_required
@@ -71,7 +71,8 @@ def before_request():
 @login_required
 def edit_profile():
   form = EditProifileForm()
-  if form.validate_on_submit:
+  app.logger.info('%s form validate_on_submit', form.validate_on_submit())
+  if form.validate_on_submit():
     current_user.username = form.username.data
     current_user.about_me = form.about_me.data
     db.session.commit()
