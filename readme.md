@@ -8,4 +8,4 @@
 ## Run on console mode
 ### run the following command `pipenv run flask shell`(make sure expor app file) 
 
-## run `export FLASK_DEBUG=1` for running app on debug mode
+## run `export FLASK_DEBUG=1` before running flask app for running app on debug mode
