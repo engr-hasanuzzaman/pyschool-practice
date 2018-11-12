@@ -26,3 +26,24 @@ def addNumbersInList(numbers):
   for n in numbers:
     if n % 2 == 1: total += n
   return total
+
+  # Count odd numbers
+  def countOddNumbers(numbers):
+  total = 0
+  for n in numbers:
+    if n % 2 == 1: total += 1
+  return total
+  
+  # Get Even Numbers
+  def getEvenNumbers(numbers):
+  even_n = []
+  for n in numbers:
+    if n % 2 == 0: even_n.append(n)
+  return even_n
+
+  # Remove First And Last
+  def removeFirstAndLast(numbers):
+  if len(numbers) > 0: numbers.remove(numbers[0])
+  if len(numbers) > 0:numbers.remove(numbers[-1])
+  return numbers
+   
