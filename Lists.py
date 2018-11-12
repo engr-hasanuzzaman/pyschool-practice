@@ -46,4 +46,14 @@ def addNumbersInList(numbers):
   if len(numbers) > 0: numbers.remove(numbers[0])
   if len(numbers) > 0:numbers.remove(numbers[-1])
   return numbers
+
+  # Get Maximum Number
+  ### Write a function getMaxNumber(numbers) that returns the maximum number in a list.
+  def getMaxNumber(numbers):
+  if len(numbers) == 0: return 'N.A'
+  max_number = -99999
+  
+  for n in numbers:
+    if n > max_number: max_number = n
+  return max_number
    
