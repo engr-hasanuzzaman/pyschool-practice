@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 requests = "*"
-django = "==2.1"
+django = "*"
 flask = "*"
 flask-wtf = "*"
 flask-sqlalchemy = "*"
